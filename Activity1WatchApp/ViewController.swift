@@ -43,6 +43,9 @@ class ViewController: UIViewController, WCSessionDelegate {
             }
         }
     
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    @IBOutlet weak var AgeLAbel: UILabel!
     @IBAction func sentToWatch(_ sender: Any) {
         print("Sending Message to Watch")
                // code for sending message to WATCH
@@ -62,10 +65,18 @@ class ViewController: UIViewController, WCSessionDelegate {
                    messageCounter = messageCounter + 1
                    sendMessageOutput.text = "Cannot reach watch! \(messageCounter)"
                }
+        
+        func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("Phone: I received a message from watch: \(message)")
+        
+        let name = message["name"] as! String
+        let age = message["age"] as! String
+        NameLabel.text = name
+        AgeLAbel.text = age
                
     }
 }
 
 
 
-
+}

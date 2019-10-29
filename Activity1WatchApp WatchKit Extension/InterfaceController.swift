@@ -9,7 +9,7 @@
 import WatchKit
 import Foundation
 import WatchConnectivity
-
+var messageCounter:Int = 0
 class InterfaceController: WKInterfaceController, WCSessionDelegate
 {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?)
@@ -27,8 +27,31 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate
     @IBOutlet weak var msgFromPhone: WKInterfaceLabel!
     // function to receive message from phone
     
+    @IBAction func sendToPhone() {
+         if (WCSession.default.isReachable == true)
+                {
+                    let message1 = ["name":"Pritish",
+                        "age":"35"]
+        //                as [String : Any]
+                    
+                    // send the message
+                    WCSession.default.sendMessage(message1, replyHandler: nil)
+                    messageCounter = messageCounter + 1
+                    msgFromPhone.setText("Message Sent")
+                    
+                }
+                        
+                    else {
+                       messageCounter = messageCounter + 1
+                        msgFromPhone.setText("Message Cannot be sent")
+                    }
+                    
+    }
+    
     @IBOutlet weak var NameLabel: WKInterfaceLabel!
     @IBOutlet weak var ColorLabel: WKInterfaceLabel!
+    //function to send message from watch to phone
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any])
        {
            // Output message to terminal

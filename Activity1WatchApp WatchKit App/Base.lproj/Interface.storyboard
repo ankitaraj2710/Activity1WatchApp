@@ -11,7 +11,11 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Activity1WatchApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Send Message to Phone" id="2Oe-Ym-5BX"/>
+                        <button width="1" alignment="left" title="Send Message to Phone" id="2Oe-Ym-5BX">
+                            <connections>
+                                <action selector="sendToPhone" destination="AgC-eL-Hgc" id="WMW-K7-19a"/>
+                            </connections>
+                        </button>
                         <label alignment="left" text="Messaege from Phone" id="qUB-NO-m6s"/>
                         <label alignment="left" text="Name" id="yZn-FU-XE9"/>
                         <label alignment="left" text="Color" id="gcm-eA-pbg"/>
