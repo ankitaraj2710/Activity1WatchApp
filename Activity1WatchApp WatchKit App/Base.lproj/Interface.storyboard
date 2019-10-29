@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Activity1WatchApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Send Message to Phone" id="2Oe-Ym-5BX"/>
+                        <label alignment="left" text="Messaege from Phone" id="qUB-NO-m6s"/>
+                        <label alignment="left" text="Name" id="yZn-FU-XE9"/>
+                        <label alignment="left" text="Color" id="gcm-eA-pbg"/>
+                    </items>
+                    <connections>
+                        <outlet property="ColorLabel" destination="gcm-eA-pbg" id="Rdn-xR-LbN"/>
+                        <outlet property="NameLabel" destination="yZn-FU-XE9" id="Gc6-7m-VdE"/>
+                        <outlet property="msgFromPhone" destination="qUB-NO-m6s" id="oIL-Tr-2rU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+    </scenes>
+</document>
